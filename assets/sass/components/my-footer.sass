@@ -1,0 +1,61 @@
+@use '../base' as *
+
+.footer
+	padding: 32px 0
+	border-top: 1px solid $gray
+
+	@include media($md)
+		padding: 24px 0
+
+	&__row
+		@include flex(row, space-between, center)
+		@include media($md)
+			flex-direction: column
+			gap: 18px
+			text-align: center
+
+	&__copy
+		margin-top: 40px
+		@include font(400, 16px, normal, $gray)
+		text-align: center
+
+		@include media($md)
+			margin-top: 24px
+
+.footer-info
+	&__row
+		@include flex(row, flex-start, center)
+		gap: 20px
+		@include media($md)
+			justify-content: space-between
+
+	&__logo
+		@include font(500, 16px, normal, $white)
+		@include flex(row, flex-start, center)
+		gap: 8px
+		img
+			@include fit(cover)
+			max-width: 20px
+
+	&__email
+		@include font(400, 16px, normal, $gray)
+
+	&__text
+		margin-top: 16px
+		@include font()
+
+.footer-media
+
+	&__title
+		@include font(500, 24px, normal, $white)
+
+	&__row
+		margin-top: 8px
+		@include flex(row, center, center)
+		gap: 8px
+
+	&__item
+		width: 32px
+		height: 32px
+		img
+			@include fit(cover)

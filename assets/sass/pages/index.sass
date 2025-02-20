@@ -1,0 +1,361 @@
+@use '../base' as *
+//.home
+
+//$xs: 450px
+//$sm: 640px
+//$md: 768px
+//$lg: 1024px
+//$xl: 1280px
+//$xxl: 1536px
+.header
+	padding: 62px 0
+	@include media($xs)
+		padding: 30px 0 60px
+
+	&__row
+		@include flex(row, space-between, center)
+		gap: 24px
+
+		@include media($md)
+			flex-direction: column
+
+	&__left
+		text-align: left
+
+	&__title
+		@include font(600, 32px)
+		span
+			color: $primary
+
+		@include media($xs)
+			font-size: 28px
+
+	&__desc
+		margin-top: 32px
+		color: $gray
+
+		@include media($md)
+			margin-top: 25px
+
+	&__contact
+		margin-top: 24px
+		@include base-btn(150px)
+
+		@include media($md)
+			display: none
+
+	&__right
+		@include flex(column, center, center)
+
+	&__image
+		width: 470px
+		height: 386px
+		@include media($xl)
+			width: 400px
+			height: auto
+
+		@include media($lg)
+			width: 300px
+			height: auto
+
+		@include media($xs)
+			width: 100%
+		img
+			@include fit(cover)
+
+.header-work
+	width: 80%
+	border: 1px solid $gray
+	padding: 8px 10px
+
+	@include media($xs)
+		width: 100%
+
+	&__row
+		@include flex(row, flex-start, center)
+		gap: 8px
+
+	&__icon
+		width: 16px
+		height: 16px
+		flex: 0 0 16px
+		background-color: $primary
+
+	&__title
+		color: $gray
+		font-weight: 400
+		span
+			color: $white
+			font-weight: 500
+
+.quote
+	max-width: 720px
+	margin: 100px auto 0
+	@include flex(column, center, flex-end)
+
+	@include media($lg)
+		margin: 60px 0 0 0
+		max-width: 100%
+
+	&__top
+		position: relative
+		display: inline-block
+		padding: 32px
+		border: 1px solid $gray
+
+		@include media($lg)
+			padding: 24px
+		@include media($sm)
+			padding: 18px
+
+	&__icon
+		position: absolute
+		width: 42px
+		height: auto
+		padding: 4px 8px
+		top: 0
+		left: 0
+		background-color: $background
+		transform: translate(50%, -50%)
+		img
+			@include fit(cover)
+
+		@include media($md)
+			width: 36px
+			height: auto
+
+		&--bottom
+			left: auto
+			right: 0
+			transform: translate(-50%, -50%)
+
+	&__author
+		position: relative
+		display: inline-block
+		padding: 32px
+		border: 1px solid $gray
+		border-top: none
+
+		@include media($lg)
+			padding: 24px
+		@include media($sm)
+			padding: 18px
+
+	&__text
+		@include font(400, 24px)
+		@include media($lg)
+			font-size: 20px
+
+		&--medium
+			font-weight: 500
+
+//=================== header end =========
+//=================== projects start =========
+.home-projects
+	padding-bottom: 110px
+
+	@include media($md)
+		padding-bottom: 60px
+
+	&__head
+		@include flex(row, space-between, center)
+
+	&__title
+		&::after
+			width: 500px
+
+	//&__all
+
+	&__main
+		margin-top: 48px
+		display: grid
+		grid-template-columns: repeat(3, 1fr)
+		gap: 16px
+
+		@include media($lg)
+			margin-top: 24px
+			grid-template-columns: repeat(2, 1fr)
+		@include media($md)
+			display: none
+
+	&__swiper
+		margin-top: 24px
+		display: none
+		@include media($md)
+			display: block
+
+//=================== projects end =========
+//=================== skills start =========
+.home-skills
+	padding-bottom: 110px
+
+	@include media($md)
+		padding-bottom: 60px
+
+	&__head
+		@include flex(row, space-between, center)
+
+	&__title
+		&::after
+			width: 400px
+
+	&__row
+		margin-top: 24px
+		@include flex(row, space-between, center)
+		gap: 80px
+
+		@include media($xl)
+			gap: 60px
+
+		@include media($md)
+			flex-direction: column-reverse
+			gap: 20px
+
+	&__image
+		width: 400px
+		height: auto
+		flex: 0 0 400px
+
+		@include media($xl)
+			width: 340px
+			flex: 0 0 340px
+
+		@include media($lg)
+			display: none
+		img
+			@include fit(cover)
+
+	&__main
+		display: grid
+		grid-template-columns: repeat(3, 1fr)
+		gap: 16px
+
+		@include media($md)
+			grid-template-columns: 1fr
+
+	&__col
+		@include flex(column)
+		gap: 16px
+		@include media($md)
+			display: none
+
+	&__all
+		display: none
+		
+		@include media($md)
+			display: grid
+			grid-template-columns: repeat(2, 1fr)
+			gap: 16px
+		
+		@include media($sm)
+			grid-template-columns: 1fr
+
+
+//=================== skills end =========
+//=================== about start =========
+.home-about
+	padding-bottom: 110px
+
+	@include media($md)
+		padding-bottom: 60px
+
+	//&__head
+
+	&__title
+		&::after
+			width: 300px
+
+	&__row
+		@include flex(row, space-between, center)
+		gap: 100px
+
+		@include media($xl)
+			gap: 40px
+
+		@include media($md)
+			flex-direction: column-reverse
+			gap: 20px
+
+	&__main
+		max-width: 600px
+
+	&__text
+		@include font(400, 16px, 26px, $gray)
+		margin-top: 30px
+		&:first-child
+			margin-top: 0
+		@include media($md)
+			margin-top: 20px
+
+	&__more
+		margin-top: 30px
+		@include base-btn(150px)
+
+	&__image
+		width: 343px
+		height: auto
+
+		@include media($xl)
+			flex: 0 0 320px
+
+		@include media($lg)
+			flex: 0 0 300px
+
+		@include media($xs)
+			width: 100%
+			padding: 0 30px
+
+		img
+			@include fit(cover)
+
+//=================== about end =========
+//=================== contact start =========
+.home-contact
+	padding-bottom: 110px
+
+	@include media($md)
+		padding-bottom: 80px
+	//&__head
+
+	&__title
+		&::after
+			width: 200px
+
+	&__row
+		margin-top: 40px
+		@include flex(row, space-between, flex-start)
+		gap: 40px
+		@include media($md)
+			flex-direction: column
+			gap: 20px
+			margin-top: 24px
+
+	&__text
+		@include font(500, 16px, normal, $gray)
+		max-width: 600px
+
+.contact-info
+	border: 1px solid $gray
+	padding: 16px
+
+	@include media($md)
+		width: 100%
+
+	&__title
+		@include font(600)
+
+	&__item
+		margin-top: 8px
+		@include flex(row, flex-start, center)
+		gap: 8px
+
+	&__icon
+		width: 32px
+		height: 32px
+		img
+			@include fit(cover)
+
+	&__text
+		@include font(400, 16px, normal, $gray)
+
+//=================== contact end =========

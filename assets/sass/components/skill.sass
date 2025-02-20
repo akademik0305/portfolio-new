@@ -1,0 +1,18 @@
+@use '../base' as *
+
+.skill
+	border: 1px solid $gray
+
+	&__title
+		padding: 8px
+		@include font(600, 16px, normal, $white)
+
+	&__main
+		border-top: 1px solid $gray
+		padding: 8px
+		@include flex(row, flex-start, center)
+		flex-wrap: wrap
+		gap: 8px
+
+	&__name
+		@include font(400, 16px, normal, $gray)

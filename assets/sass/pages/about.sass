@@ -1,0 +1,83 @@
+@use '../base' as *
+.about
+	padding: 60px 0 100px
+
+	@include media($md)
+		padding: 30px 0 80px
+
+	&__main
+		padding-bottom: 80px
+
+		@include media($md)
+			padding-bottom: 60px
+
+//.home-about
+
+//	&__row
+
+//	&__main
+
+//	&__text
+
+//	&__image
+
+.about-skills
+	padding-bottom: 80px
+
+	@include media($md)
+		padding-bottom: 60px
+
+	//&__title
+
+	&__row
+		margin-top: 24px
+		display: grid
+		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr))
+		gap: 18px
+
+.facts
+	//&__title
+
+	&__row
+		margin-top: 24px
+		@include flex(row, space-between, center)
+		gap: 80px
+
+		@include media($lg)
+			gap: 40px
+
+		@include media($md)
+			flex-direction: column-reverse
+			gap: 24px
+
+	&__main
+		@include flex(row, flex-start, center)
+		flex-wrap: wrap
+		gap: 18px
+
+	&__image
+		width: 200px
+		height: auto
+		flex: 0 0 200px
+
+		@include media($md)
+			height: auto
+			flex: 0 0 auto
+
+		@include media($xs)
+			//width: 100%
+
+		img
+			@include fit(cover)
+
+.fact
+	padding: 8px
+	border: 1px solid $gray
+	@include font($color: $gray)
+
+	@include media($xs)
+		width: 100%
+
+	span
+		color: white
+		font-weight: 500

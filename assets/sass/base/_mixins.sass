@@ -1,0 +1,43 @@
+@use 'colors' as *
+
+@mixin media($size)
+	@media (max-width: $size)
+		@content
+
+// for images
+@mixin fit($fit)
+	width: 100%
+	height: 100%
+	object-fit: $fit
+
+// font
+@mixin font($fw: 400, $fz: 16px, $lh: normal, $color: $white)
+	font-weight: $fw
+	font-size: $fz
+	line-height: $lh
+	color: $color
+
+// flex
+@mixin flex($direction: row, $justify: flex-start, $align: stretch)
+	display: flex
+	flex-direction: $direction
+	justify-content: $justify
+	align-items: $align
+
+//trantision
+@mixin transition($property: all, $duration: 0.3s, $timing: ease-in-out)
+	transition: $property $duration $timing
+
+// base button
+@mixin base-btn($max-w)
+	@include flex(row, center, center)
+	gap: 12px
+	@include font(500)
+	padding: 8px 16px
+	width: 100%
+	max-width: $max-w
+	border: 1px solid $primary
+	@include transition($property: background-color,)
+
+	&:hover
+		background-color: rgba($primary, .2)

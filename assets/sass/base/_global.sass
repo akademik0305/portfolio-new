@@ -1,0 +1,57 @@
+@use './mixins' as *
+@use './colors' as *
+@use './_sizes' as *
+
+.main-title
+	@include font(500, 32px, normal)
+	position: relative
+	display: inline-block
+
+	@include media($lg)
+		font-size: 28px
+
+	@include media($md)
+		font-size: 26px
+
+	@include media($xs)
+		font-size: 24px
+
+	&::after
+		content: ""
+		width: 400px
+		height: 1px
+		background-color: $primary
+		display: inline-block
+		position: absolute
+		top: 50%
+		left: 100%
+		transform: translate(10px, -50%)
+
+		@include media($lg)
+			width: 0
+			content: none
+
+	&--no-line
+		&::after
+			content: none
+
+	span
+		color: $primary
+
+.all-btn
+	@include font(500, 16px)
+	@include transition(all, .5s)
+	align-items: center
+
+	&:hover
+		color: $primary
+		span
+			//transform: rotateX(360deg) translateX(4px) 
+			translate: 4px
+			rotate: x 360deg
+			color: $primary
+
+	span
+		color: $white
+		display: inline-block
+		@include transition(all, .5s)

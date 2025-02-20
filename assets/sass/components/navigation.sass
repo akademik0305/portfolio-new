@@ -1,0 +1,133 @@
+//@use '../base/mixins'
+@use '../base' as *
+
+.navbar
+	padding: 32px 0 8px 0
+	@include media($md)
+		padding-top: 20px
+	&__row
+		@include flex($direction: row, $justify: space-between, $align: center)
+
+	&__logo
+		@include flex(row, center, center)
+		gap: 8px
+		@include font(700, 16px)
+
+	&__right
+		@include flex(row, center, center)
+		gap: 32px
+
+	&__menu
+		@include flex(row, center, center)
+		gap: 32px
+		@include media($md)
+			display: none
+
+	&__burger
+		display: none
+		@include media($md)
+			display: block
+
+.navbar-menu
+
+	//&__item
+
+	&__link
+		@include font(400, 16px, normal, $gray)
+		@include transition(all, .3s)
+		white-space: nowrap
+		&:hover
+			color: $white
+		&.router-link-active
+			color: $white
+			font-weight: 600
+
+		span
+			color: $primary
+
+.navbar-lang
+	@include media($md)
+		display: none
+
+	&__row
+		@include flex(row, center, center)
+		gap: 4px
+
+	&__name
+		@include font(600, 16px, normal, $gray)
+
+	&__icon
+		width: 10px
+		height: 7px
+
+//================ burger
+.burger
+	position: fixed
+	top: -100%
+	left: 0
+	width: 100%
+	height: 100vh
+	background-color: $background
+	z-index: 3
+	@include transition
+
+	&.open
+		top: 0
+
+	&__main
+		padding: 20px 16px 36px
+		height: 100%
+		@include flex(column)
+
+	&__center
+		margin-top: 40px
+		flex: 1
+
+	&__head
+		@include flex(row, space-between, center)
+
+	&__logo
+		@include flex(row, flex-start, center)
+		gap: 8px
+
+	&__close
+		width: 28px
+		height: 28px
+		img
+			@include fit(cover)
+
+.burger-menu
+
+	&__item
+		&:not(&:first-child)
+			margin-top: 32px
+
+	&__link
+		@include flex(row, flex-start, center)
+		@include font(500, 32px)
+		span
+			color: $primary
+
+.burger-lang
+	margin-top: 32px
+
+	&__row
+		@include flex(row, flex-start, center)
+		gap: 4px
+
+	&__name
+		@include font(600, 32px, $color: $gray)
+
+	//&__icon
+
+.burger-socials
+
+	&__row
+		@include flex(row, center, center)
+		gap: 8px
+
+	&__item
+		width: 64px
+		height: 64px
+		img
+			@include fit(cover)
