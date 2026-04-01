@@ -10,6 +10,10 @@ const props = defineProps({
 		required: true,
 	},
 });
+
+//===============================-< imports >-===============================
+// locale
+const { t } = useI18n()
 </script>
 <template>
 	<div class="skill">

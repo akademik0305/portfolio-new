@@ -1,11 +1,11 @@
 <script lang="ts" setup>
 //===============================-< imports >-===============================
-//> variables
-//> functions
+// locale
+const { t } = useI18n()
 
 //===============================-< projects swiper >-===============================
 //> variables
-const containerRef = ref(null);
+const containerRef = ref(null)
 
 const swiper = useSwiper(containerRef, {
 	breakpoints: {
@@ -22,7 +22,7 @@ const swiper = useSwiper(containerRef, {
 	},
 	loop: true,
 	modules: [],
-});
+})
 
 //> functions
 </script>
@@ -35,13 +35,15 @@ const swiper = useSwiper(containerRef, {
 					<!-- header left -->
 					<div class="header__left">
 						<h1 class="header__title">
-							Elias is a <span>web designer</span> and
-							<span>front-end developer</span>
+							{{ t("web-designer-prefix") }}
+							<span>{{ t("web-designer-highlight-1") }}</span>
+							{{ t("web-designer-middle") }}
+							<span>{{ t("web-designer-highlight-2") }}</span>
 						</h1>
 						<p class="header__desc">
-							He crafts responsive websites where technologies meet creativity
+							{{ t("hero-desc") }}
 						</p>
-						<button class="header__contact">Contact me!!</button>
+						<button class="header__contact">{{ t("contact-me") }}</button>
 					</div>
 					<!-- header left -->
 
@@ -58,7 +60,9 @@ const swiper = useSwiper(containerRef, {
 							<div class="header-work__row">
 								<span class="header-work__icon"></span>
 								<h4 class="header-work__title">
-									Currently working on <span>Portfolio</span>
+									{{ t("currently-working-prefix") }}
+									<span>{{ t("currently-working-highlight") }}</span>
+									{{ t("currently-working-suffix") }}
 								</h4>
 							</div>
 						</div>
@@ -70,14 +74,14 @@ const swiper = useSwiper(containerRef, {
 				<div class="quote">
 					<div class="quote__top">
 						<h2 class="quote__text quote__text--medium">
-							With great power comes great electricity bill
+							{{ t("quote") }}
 						</h2>
 						<div class="quote__icon">
 							<img src="~/assets/images/svg/quote.svg" alt="quote" />
 						</div>
 					</div>
 					<div class="quote__author">
-						<h2 class="quote__text">- Dr. Who</h2>
+						<h2 class="quote__text">{{ t("quote-author") }}</h2>
 						<div class="quote__icon quote__icon--bottom">
 							<img src="~/assets/images/svg/quote.svg" alt="quote" />
 						</div>
@@ -94,11 +98,12 @@ const swiper = useSwiper(containerRef, {
 				<!-- head -->
 				<div class="home-projects__head">
 					<h2 class="home-projects__title main-title">
-						<span>#</span>projects
+						<span>#</span>{{ t("projects") }}
 						<!--<span class="main-title__line"></span>-->
 					</h2>
 					<a href="#" class="home-projects__all all-btn"
-						>View all <span>~~></span></a
+						>{{ t("view-all-prefix") }}
+						<span>{{ t("view-all-arrow") }}</span></a
 					>
 				</div>
 				<!-- head -->
@@ -141,84 +146,92 @@ const swiper = useSwiper(containerRef, {
 			<div class="container">
 				<div class="home-skills__head">
 					<h2 class="home-skills__title main-title">
-						<span>#</span>skills
-						<!--<span class="main-title__line"></span>-->
+						<span>#</span>{{ t("skills") }}
 					</h2>
 				</div>
 				<div class="home-skills__row">
 					<div class="home-skills__image">
 						<img src="~/assets/images/png/skills-img.png" alt="skills" />
 					</div>
-					<!-- main -->
 					<div class="home-skills__main">
 						<div class="home-skills__col">
 							<div class="skill">
-								<h4 class="skill__title">Languages</h4>
+								<h4 class="skill__title">{{ t("languages") }}</h4>
 								<div class="skill__main">
 									<h5 class="skill__name">TypeScript</h5>
-									<h5 class="skill__name">TypeScript</h5>
-									<h5 class="skill__name">TypeScript</h5>
+									<h5 class="skill__name">JavaScript</h5>
+									<h5 class="skill__name">Python</h5>
 								</div>
 							</div>
 						</div>
 						<div class="home-skills__col">
 							<div class="skill">
-								<h4 class="skill__title">Databases</h4>
+								<h4 class="skill__title">{{ t("databases") }}</h4>
 								<div class="skill__main">
-									<h5 class="skill__name">TypeScript</h5>
-									<h5 class="skill__name">TypeScript</h5>
-									<h5 class="skill__name">TypeScript</h5>
+									<h5 class="skill__name">PostgreSQL</h5>
+									<h5 class="skill__name">MongoDB</h5>
+									<h5 class="skill__name">Redis</h5>
 								</div>
 							</div>
 							<div class="skill">
-								<h4 class="skill__title">Languages</h4>
+								<h4 class="skill__title">{{ t("other") }}</h4>
 								<div class="skill__main">
-									<h5 class="skill__name">TypeScript</h5>
-									<h5 class="skill__name">TypeScript</h5>
-									<h5 class="skill__name">TypeScript</h5>
+									<h5 class="skill__name">REST API</h5>
+									<h5 class="skill__name">GraphQL</h5>
+									<h5 class="skill__name">WebSockets</h5>
 								</div>
 							</div>
 						</div>
 						<div class="home-skills__col">
 							<div class="skill">
-								<h4 class="skill__title">Other</h4>
+								<h4 class="skill__title">{{ t("tools") }}</h4>
 								<div class="skill__main">
-									<h5 class="skill__name">TypeScript</h5>
-									<h5 class="skill__name">TypeScript</h5>
-									<h5 class="skill__name">TypeScript</h5>
+									<h5 class="skill__name">VS Code</h5>
+									<h5 class="skill__name">Git</h5>
+									<h5 class="skill__name">Docker</h5>
 								</div>
 							</div>
 							<div class="skill">
-								<h4 class="skill__title">Languages</h4>
+								<h4 class="skill__title">Frameworks</h4>
 								<div class="skill__main">
-									<h5 class="skill__name">TypeScript</h5>
-									<h5 class="skill__name">TypeScript</h5>
-									<h5 class="skill__name">TypeScript</h5>
-									<h5 class="skill__name">TypeScript</h5>
-									<h5 class="skill__name">TypeScript</h5>
+									<h5 class="skill__name">Vue.js</h5>
+									<h5 class="skill__name">Nuxt.js</h5>
+									<h5 class="skill__name">Node.js</h5>
+									<h5 class="skill__name">TailwindCSS</h5>
+									<h5 class="skill__name">Express</h5>
 								</div>
 							</div>
 						</div>
 						<div class="home-skills__all">
 							<Skill
-								v-for="item in 5"
-								:title="'Language'"
+								title="Languages"
+								:items="['TypeScript', 'JavaScript', 'Python']"
+							/>
+							<Skill
+								title="Databases"
+								:items="['PostgreSQL', 'MongoDB', 'Redis']"
+							/>
+							<Skill title="Tools" :items="['VS Code', 'Git', 'Docker']" />
+							<Skill
+								title="Frameworks"
 								:items="[
-									'TypeScript',
-									'TypeScript',
-									'TypeScript',
-									'TypeScript',
-									'TypeScript',
+									'Vue.js',
+									'Nuxt.js',
+									'Node.js',
+									'TailwindCSS',
+									'Express',
 								]"
+							/>
+							<Skill
+								title="Other"
+								:items="['REST API', 'GraphQL', 'WebSockets']"
 							/>
 						</div>
 					</div>
-					<!-- main -->
 				</div>
 			</div>
 		</div>
-		<!-- skills -->
-
+		
 		<!-- about -->
 		<div class="home-about">
 			<div class="container">

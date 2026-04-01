@@ -6,6 +6,13 @@
 		span
 			color: $primary
 
+		@include media($md)
+			@include font(600, 24px)
+
 	&__desc
 		margin-top: 14px
 		@include font()
+
+		@include media($md)
+			margin-top: 10px
+			@include font(400, 14px)

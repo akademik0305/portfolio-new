@@ -1,26 +1,29 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+//===============================-< imports >-===============================
+// locale
+const { t } = useI18n()
+</script>
 <template>
 	<main class="contact">
 		<div class="container">
-			<Breadcump title="about-me" desc="Who am i?" />
+			<Breadcump :title="t('contacts-title')" :desc="t('contacts-subtitle')" />
 
 			<!-- main -->
 			<section class="contact__main">
 				<div class="contact__row">
 					<p class="contact__text">
-						I’m interested in freelance opportunities. However, if you have
-						other request or question, don’t hesitate to contact me
+						{{ t('contact-text') }}
 					</p>
 
 					<div class="contact__infos">
 						<div class="contact-info">
-							<h5 class="contact-info__title">Support me here</h5>
+							<h5 class="contact-info__title">{{ t('support-me') }}</h5>
 							<div class="contact-info__item">
 								<p class="contact-info__text">4149500120690030</p>
 							</div>
 						</div>
 						<div class="contact-info">
-							<h5 class="contact-info__title">Message me here</h5>
+							<h5 class="contact-info__title">{{ t('message-me') }}</h5>
 							<div class="contact-info__item">
 								<div class="contact-info__icon">
 									<img src="~/assets/images/svg/discord.svg" alt="discord" />
@@ -42,7 +45,7 @@
 			<!-- media -->
 			<section class="media">
 				<h2 class="media__title main-title main-title--no-line">
-					<span>#</span>all-media
+					<span>#</span>{{ t('all-media') }}
 				</h2>
 
 				<div class="media__row">
@@ -51,7 +54,7 @@
 							<div class="media-item__icon">
 								<img src="~/assets/images/svg/email.svg" alt="email" />
 							</div>
-							<p class="media-item__name">@elias</p>
+							<p class="media-item__name">{{ t('social-handle-1') }}</p>
 						</div>
 					</div>
 					<div class="media-item">
@@ -59,7 +62,7 @@
 							<div class="media-item__icon">
 								<img src="~/assets/images/svg/email.svg" alt="email" />
 							</div>
-							<p class="media-item__name">@elias</p>
+							<p class="media-item__name">{{ t('social-handle-2') }}</p>
 						</div>
 					</div>
 				</div>

@@ -14,5 +14,12 @@
 		flex-wrap: wrap
 		gap: 8px
 
+		@include media($sm)
+			padding: 12px
+			gap: 12px
+
 	&__name
 		@include font(400, 16px, normal, $gray)
+
+		@include media($sm)
+			@include font(400, 18px, normal, $gray)

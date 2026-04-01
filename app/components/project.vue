@@ -6,6 +6,10 @@ const props = defineProps({
 		required: true
 	}
 })
+
+//===============================-< imports >-===============================
+// locale
+const { t } = useI18n()
 </script>
 <template>
 	<article class="project">
@@ -23,7 +27,7 @@ const props = defineProps({
 			<p class="project__desc">Minecraft servers hosting</p>
 		</div>
 		<div class="project__footer">
-			<a href="#" class="project__demo">Live <~></a>
+			<a href="#" class="project__demo">{{ t('live-demo') }}</a>
 		</div>
 	</article>
 </template>

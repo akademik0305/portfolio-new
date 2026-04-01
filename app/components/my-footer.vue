@@ -1,4 +1,8 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+//===============================-< imports >-===============================
+// locale
+const { t } = useI18n()
+</script>
 <template>
 	<footer class="footer">
 		<div class="container">
@@ -12,11 +16,11 @@
 						</div>
 						<p class="footer-info__email">elias@elias-dev.ml</p>
 					</div>
-					<p class="footer-info__text">Web designer and front-end developer</p>
+					<p class="footer-info__text">{{ t('web-designer-footer') }}</p>
 				</div>
 				<!-- footer info -->
 				<div class="footer-media">
-					<h5 class="footer-media__title">Media</h5>
+					<h5 class="footer-media__title">{{ t('media') }}</h5>
 					<div class="footer-media__row">
 						<a href="" class="footer-media__item">
 							<img src="~/assets/images/svg/github.svg" alt="github" />
@@ -30,7 +34,7 @@
 					</div>
 				</div>
 			</div>
-			<p class="footer__copy">© Copyright 2022. Made by Elias</p>
+			<p class="footer__copy">{{ t('copyright') }}</p>
 		</div>
 	</footer>
 </template>
